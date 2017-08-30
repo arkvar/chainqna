@@ -1,0 +1,11 @@
+//custom resets
+@import "theme/reset";
+
+// Theme variables, must be included before the libraries to allow overriding defaults
+@import "theme/theme-variables";
+
+// 3rd party libraries
+@import "~font-awesome/scss/font-awesome.scss";
+
+// Theme customization
+@import "theme/theme";
