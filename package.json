@@ -24,7 +24,6 @@
     "@angular/platform-browser": "^4.0.0",
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
-    "@ngx-translate/core": "^7.0.0",
     "@ngrx/core": "1.2.0",
     "@ngrx/effects": "2.0.3",
     "@ngrx/store": "2.2.2",
@@ -32,6 +31,7 @@
     "core-js": "^2.4.1",
     "font-awesome": "^4.7.0",
     "lodash": "^4.17.4",
+    "reselect": "^3.0.1",
     "rxjs": "^5.1.0",
     "zone.js": "^0.8.4"
   },
@@ -56,6 +56,7 @@
     "karma-jasmine": "^1.1.0",
     "karma-junit-reporter": "^1.2.0",
     "karma-phantomjs-launcher": "^1.0.2",
+    "ngrx-store-freeze": "^0.1.9",
     "phantomjs-prebuilt": "^2.1.14",
     "protractor": "~5.1.2",
     "stylelint": "^7.7.1",
