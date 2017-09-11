@@ -1,21 +1,31 @@
 @import "src/theme/theme-variables";
 
-.navbar {
-  min-height: 50px;
-  margin-bottom: 20px;
-  background-color: $header-primary;
+.root {
+    background: $header-background;
+    border-bottom: 1px solid $header-border;
+    padding: $space-1;
 }
 
-.nav-link.dropdown-toggle {
-  cursor: pointer;
+.menu-icon-container {
+    font-size: 1.2em;
+    display: inline-block;
+    margin-right: $space-1;
 }
 
-.navbar-brand {
-  line-height: 50px;
-  height: 50px;
-  padding: 15px;
-  font-size: 18px;
-  color: $font-primary;
-  text-decoration: none;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+.title-container {
+    display: inline-block;
+
+    .title {
+        font-size: 1.2em;
+        font-weight: bold;
+        text-transform: uppercase;
+
+        .title-base {
+            color: $header-primary-text;
+        }
+
+        .title-highlight {
+            color: $header-highlighted-text;
+        }
+    }
 }

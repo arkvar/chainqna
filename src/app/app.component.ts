@@ -10,9 +10,6 @@ import { Title } from '@angular/platform-browser';
 import { Observable } from 'rxjs/Observable';
 
 import { environment } from '../environments/environment';
-import { Logger } from './utils/logger/logger.service';
-
-const log = new Logger('App');
 
 @Component({
   selector: 'app-root',
@@ -21,18 +18,8 @@ const log = new Logger('App');
 })
 export class AppComponent implements OnInit {
 
-  constructor(private router: Router,
-              private activatedRoute: ActivatedRoute,
-              private titleService: Title) { }
+  constructor() { }
 
-  ngOnInit() {
-    // Setup logger
-    if (environment.production) {
-      Logger.enableProductionMode();
-    }
-
-    log.debug('init');
-
-  }
+  ngOnInit() { }
 
 }

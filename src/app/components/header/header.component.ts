@@ -1,14 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-header',
+  selector: 'header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  @Output() onNavigationToggle = new EventEmitter<any>();
 
-  constructor(private router: Router) { }
+  constructor() { }
 
   ngOnInit() { }
+
+  handleNavigationIconClick() {
+    this.onNavigationToggle.emit();
+  }
 }

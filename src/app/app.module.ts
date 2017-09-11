@@ -3,22 +3,25 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
+import { StoreModule } from '@ngrx/store';
 
-import { UtilsModule } from './utils/utils.module';
+import { AppComponent } from './app.component';
+
 import { SharedModule } from './shared/shared.module';
+import { ComponentModule } from './components/component.module';
 import { HomeModule } from './routes/home/home.module';
+
+import { reducer } from './reducers';
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    UtilsModule,
     SharedModule,
+    ComponentModule,
     HomeModule,
-    AppRoutingModule
+    StoreModule.provideStore(reducer)
   ],
   declarations: [AppComponent],
   providers: [],
