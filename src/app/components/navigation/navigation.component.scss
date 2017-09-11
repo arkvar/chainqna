@@ -1,0 +1,29 @@
+@import "../../../theme/theme-variables";
+
+.root {
+    background-color: $navigation-background;
+    height: 100%;
+
+    .item {
+        border-bottom: 1px solid $navigation-border;
+        color: $navigation-primary-text;
+        padding: $space-1;
+        text-transform: uppercase;
+
+        .item-title {
+            margin-left: $space-05;
+        }
+    }
+
+    &.visible {
+        .item-title {
+            display: inline-block;
+        }
+    }
+
+    &.hidden {
+        .item-title {
+            display: none;
+        }
+    }
+}
