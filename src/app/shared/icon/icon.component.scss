@@ -1,0 +1,33 @@
+.root {
+    height: 0.01px;
+    overflow: hidden;
+    width: 0.01px;
+
+    &::after {
+        font-family: 'FontAwesome';
+    }
+
+    &.hamburger {
+        &::after {
+            content: '\F0C9';
+        }
+    }
+
+    &.question {
+        &::after {
+            content: '\F29C';
+        }
+    }
+
+    &.heart {
+        &::after {
+            content: '\F004';
+        }
+    }
+
+    &.user {
+        &::after {
+            content: '\F007';
+        }
+    }
+}
