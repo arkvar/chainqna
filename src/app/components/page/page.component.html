@@ -1,0 +1,11 @@
+<div class="root">
+    <div class="navigation">
+        <navigation [open]="isNavigationVisible$ | async"></navigation>
+    </div>
+    <div class="content">
+        <div class="header">
+            <header (onNavigationToggle)="handleNavigationClick()"></header>
+        </div>
+        <div class="body">this is body</div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+@import "../../../theme/theme-variables";
+
+.root {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+
+    .content {
+        display: flex;
+        flex: 10;
+        flex-direction: column;
+
+        .body {
+            flex: 1;
+            padding: $space-1;
+        }
+    }
+}
+
