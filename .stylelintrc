@@ -17,9 +17,11 @@
     "no-empty-source": null,
     "selector-class-pattern": "[a-z-]+",
     "selector-id-pattern": "[a-z-]+",
-    "selector-no-id": true,
-    "selector-no-qualifying-type": true,
-    "selector-no-universal": true,
+    "selector-max-id": 0,
+    "selector-type-no-unknown": [ true,
+                                  { "ignore" : ["custom-elements", "default-namespace"]
+    }],
+    "selector-max-universal": 1,
     "unit-whitelist": ["px", "%", "rem", "vw", "vh", "deg"],
     "max-line-length": 120
   }

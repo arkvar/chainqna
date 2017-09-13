@@ -8,12 +8,14 @@
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "noImplicitAny": true,
-    "suppressImplicitAnyIndexErrors": true,
     "target": "es5",
     "typeRoots": [
       "node_modules/@types"
     ],
+    "paths": {
+      "@app/*": ["app/*"],
+      "@env/*": ["environments/*"]
+    },
     "lib": [
       "es2016",
       "dom"
