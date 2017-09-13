@@ -1,26 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpModule } from '@angular/http';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { RouterModule } from '@angular/router';
 
-import { PageComponent } from '../components/page/page.component';
-import { HeaderComponent } from '../components/header/header.component';
-import { NavigationComponent } from '../components/navigation/navigation.component';
+import { PageComponent } from './page/page.component';
 
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from '@app/shared';
 
 @NgModule({
   imports: [
+    RouterModule,
     CommonModule,
     SharedModule
   ],
   declarations: [
-    NavigationComponent,
-    PageComponent,
-    HeaderComponent
+    PageComponent
   ],
   exports: [
-    NavigationComponent,
-    PageComponent,
-    HeaderComponent
+    PageComponent
   ],
 })
 export class ComponentModule { }

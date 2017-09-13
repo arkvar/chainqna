@@ -1,27 +1,30 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
 
-import { StoreModule } from '@ngrx/store';
+import { SharedModule } from '@app/shared';
+import { CoreModule } from '@app/core';
 
+import { StaticModule } from '@app/static';
+import { ComponentModule } from '@app/components';
+
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { SharedModule } from './shared/shared.module';
-import { ComponentModule } from './components/component.module';
-import { HomeModule } from './routes/home/home.module';
-
-import { reducer } from './reducers';
 
 @NgModule({
   imports: [
+    // angular
+    BrowserAnimationsModule,
     BrowserModule,
-    FormsModule,
-    HttpModule,
+
+    CoreModule,
     SharedModule,
     ComponentModule,
-    HomeModule,
-    StoreModule.provideStore(reducer)
+
+    StaticModule,
+
+    AppRoutingModule
   ],
   declarations: [AppComponent],
   providers: [],

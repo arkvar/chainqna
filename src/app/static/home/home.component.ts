@@ -1,6 +1,6 @@
-import 'rxjs/add/operator/finally';
-
 import { Component, OnInit } from '@angular/core';
+
+import { ANIMATE_ON_ROUTE_ENTER } from '@app/core';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() {}
+  animateOnRouteEnter = ANIMATE_ON_ROUTE_ENTER;
+
+  constructor() { }
 
   ngOnInit() {}
 

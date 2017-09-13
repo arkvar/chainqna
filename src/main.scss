@@ -5,27 +5,13 @@
 @import "theme/theme-variables";
 
 // 3rd party libraries
-@import "~font-awesome/scss/font-awesome.scss";
+@import "~bootstrap/scss/bootstrap-reboot";
+@import "~bootstrap/scss/bootstrap-grid";
 
 // Theme customization
 @import "theme/theme";
 
-// Typography
-@font-face {
-    font-family: 'Roboto';
-    src: url('assets/fonts/Roboto-Regular.ttf');
-    font-weight: normal;
-    font-style: normal;
-}
-
-// Tags
-HTML {
-    color: $font-primary;
-    font-family: Roboto, Tahoma, Verdana, Geneva, sans-serif;
-    font-size: 0.9em;
-    height: 100%;
-}
-
-BODY {
-    height: 100%;
-}
+@include angular-material-theme($app-theme);
+@include app-styles-reset-theme($app-theme);
+@include app-component-theme($app-theme);
+@include app-home-component-theme($app-theme);

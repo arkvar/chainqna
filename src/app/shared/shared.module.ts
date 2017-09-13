@@ -1,20 +1,62 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { LoaderComponent } from './loader/loader.component';
-import { IconComponent } from './icon/icon.component';
+import { FormsModule  } from '@angular/forms';
+import {
+  MdButtonModule,
+  MdToolbarModule,
+  MdMenuModule,
+  MdSelectModule,
+  MdTabsModule,
+  MdInputModule,
+  MdProgressSpinnerModule,
+  MdChipsModule,
+  MdSidenavModule,
+  MdCheckboxModule,
+  MdCardModule,
+  MdListModule,
+  MdIconModule,
+  MdTooltipModule
+} from '@angular/material';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+
+    MdButtonModule,
+    MdToolbarModule,
+    MdSelectModule,
+    MdTabsModule,
+    MdInputModule,
+    MdProgressSpinnerModule,
+    MdChipsModule,
+    MdCardModule,
+    MdSidenavModule,
+    MdCheckboxModule,
+    MdListModule,
+    MdMenuModule,
+    MdIconModule,
+    MdTooltipModule
   ],
-  declarations: [
-    LoaderComponent,
-    IconComponent
-  ],
+  declarations: [ ],
   exports: [
-    LoaderComponent,
-    IconComponent
-  ],
+    CommonModule,
+    FormsModule,
+
+    MdButtonModule,
+    MdMenuModule,
+    MdTabsModule,
+    MdChipsModule,
+    MdInputModule,
+    MdProgressSpinnerModule,
+    MdCheckboxModule,
+    MdCardModule,
+    MdSidenavModule,
+    MdListModule,
+    MdSelectModule,
+    MdToolbarModule,
+    MdIconModule,
+    MdTooltipModule
+  ]
 })
 export class SharedModule { }

@@ -1,11 +1,48 @@
-<div class="root">
-    <div class="navigation">
-        <navigation [open]="isNavigationVisible$ | async"></navigation>
+<md-sidenav-container>
+
+  <md-sidenav #sidenav mode="slide">
+    <div class="branding">Chain QnA</div>
+    <md-nav-list>
+      <a md-list-item *ngFor="let item of navigationSideMenu" (click)="sidenav.close()"
+         [routerLink]="[item.link]" routerLinkActive="active">
+        {{item.label}}
+      </a>
+    </md-nav-list>
+  </md-sidenav>
+
+  <div class="wrapper">
+
+    <md-toolbar color="primary">
+      <button md-icon-button (click)="sidenav.open()">
+        <md-icon>menu</md-icon>
+      </button>
+
+      <span routerLink="" class="branding spacer text-center"><img
+        [src]="logo"/> Chain QnA</span>
+
+      <a mdTooltip="Project Github Repository"
+         mdTooltipPosition="before"
+         md-icon-button class="link"
+         href="https://github.com/arkvar/chainqna"
+         target="_blank">
+        <i class="fa fa-github fa-2x"></i>
+      </a>
+
+    </md-toolbar>
+
+    <div class="content"
+         [@routerTransition]="o.isActivated && o.activatedRoute.routeConfig.path">
+      <router-outlet #o="outlet"></router-outlet>
     </div>
-    <div class="content">
-        <div class="header">
-            <header (onNavigationToggle)="handleNavigationClick()"></header>
+
+    <div class="footer">
+      <div class="row">
+        <div class="col-12 signature">
+          &#169; 2017 - Arkvar
         </div>
-        <div class="body">this is body</div>
+      </div>
     </div>
-</div>
+
+  </div>
+
+</md-sidenav-container>

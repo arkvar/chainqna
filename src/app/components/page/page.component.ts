@@ -1,43 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import { Store } from '@ngrx/store';
 
-import * as reducer from 'app/reducers';
-import * as navigation from 'app/actions/navigation';
+import { routerTransition } from '@app/core';
 
 @Component({
-  selector: 'page',
+  selector: 'app-page',
   templateUrl: './page.component.html',
-  styleUrls: ['./page.component.scss']
+  styleUrls: ['./page.component.scss'],
+  animations: [routerTransition]
 })
 
 export class PageComponent implements OnInit {
-  isNavigationVisible$: Observable<boolean>;
-  isNavigationVisible: boolean;
 
-  constructor(private store: Store<reducer.State>) {
-    this.isNavigationVisible$ = this.store.select(reducer.getNavigationVisibility);
-  }  
+  navigationSideMenu = [
+    { link: 'questions', label: 'Questions' },
+    { link: 'favorites', label: 'Favorites' },
+    { link: 'profile', label: 'Profile' }
+  ];
 
-  ngOnInit() {
-  }
+  constructor() { }
 
-  closeNavigation() {
-    this.isNavigationVisible = false;
-    this.store.dispatch(new navigation.CloseNavigationAction());
-  }
+  ngOnInit() { }
 
-  openNavigation() {
-    this.isNavigationVisible = true;
-    this.store.dispatch(new navigation.OpenNavigationAction());
-  }
-
-  handleNavigationClick() {
-    if (this.isNavigationVisible) {
-      this.closeNavigation();
-    }
-    else {
-      this.openNavigation();
-    }
-  }
 }

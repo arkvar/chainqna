@@ -1,19 +1,91 @@
 @import "../../../theme/theme-variables";
 
-.root {
-    display: flex;
-    flex-direction: row;
-    height: 100%;
+md-sidenav-container {
+  height: 100%;
 
-    .content {
-        display: flex;
-        flex: 10;
-        flex-direction: column;
+  md-toolbar {
+    z-index: 1;
 
-        .body {
-            flex: 1;
-            padding: $space-1;
-        }
+    .nav-button {
+      margin: 0 10px 0 0;
     }
+
+    .branding {
+      cursor: pointer;
+    }
+
+    .sign-in-button {
+      line-height: 35px;
+      margin-right: 10px;
+    }
+
+    .spacer {
+      flex: 1 1 auto;
+    }
+
+    @media (max-width: map-get($grid-breakpoints, lg)) {
+      .nav-button {
+        min-width: 0;
+        padding: 0 10px;
+      }
+
+      .sign-in-button {
+        min-width: 0;
+        padding: 0 10px;
+        margin: 0 5px 0 0;
+      }
+    }
+  }
 }
 
+md-sidenav {
+  width: 250px;
+
+  .branding {
+    height: 64px;
+    padding: 8px 10px;
+    font-size: 20px;
+    font-weight: 500;
+
+    img {
+      margin: 0 10px 0 0;
+    }
+
+    span {
+      position: relative;
+      top: 3px;
+    }
+  }
+
+  .mat-nav-list {
+    padding-top: 0;
+  }
+}
+
+.wrapper {
+  z-index: -2;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .content {
+    flex: 1 0 auto;
+    position: relative;
+  }
+}
+
+.footer {
+  padding: 0 15px;
+  text-align: center;
+  z-index: 1;
+
+  .row {
+    padding: 10px 0;
+  }
+}
+
+.signature {
+  a {
+    float: right;
+  }
+}
