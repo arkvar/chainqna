@@ -7,6 +7,14 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   }, {
+    path: 'questions',
+    redirectTo: 'questions',
+    pathMatch: 'full'
+  }, {
+    path: 'profile',
+    redirectTo: 'profile',
+    pathMatch: 'full'
+  }, {
     path: '**',
     redirectTo: 'home'
   }

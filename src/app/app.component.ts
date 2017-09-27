@@ -1,5 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { OverlayContainer } from '@angular/material';
+import {Store} from "@ngrx/store";
+import {getQuestions} from "@app/core";
+import {Observable} from "rxjs/Observable";
 
 @Component({
   selector: 'app-root',

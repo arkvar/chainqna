@@ -7,6 +7,8 @@ import { EffectsModule } from '@ngrx/effects';
 import { LocalStorageService } from './local-storage/local-storage.service';
 import { authReducer } from './auth/auth.reducer';
 import { AuthEffects } from './auth/auth.effects';
+import {QuestionsEffects} from "@app/core/questions/questions.effects";
+import {questions} from "@app/core/questions/questions.reducer";
 
 export function getInitialState() {
   return LocalStorageService.loadInitialState();
@@ -23,6 +25,10 @@ export function getInitialState() {
       auth: authReducer
     }, { initialState: getInitialState }),
     EffectsModule.forRoot([AuthEffects]),
+    StoreModule.forRoot({
+      questions: questions
+    }, { }),
+    EffectsModule.forRoot([QuestionsEffects]),
   ],
   declarations: [],
   providers: [LocalStorageService]

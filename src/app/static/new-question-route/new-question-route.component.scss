@@ -1,0 +1,39 @@
+.background {
+  padding: 100px 0;
+  position: relative;
+
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+
+.get-started {
+  width: 700px;
+  margin: 50px auto 0;
+  padding-bottom: 50px;
+  font-size: 0.9rem;
+  letter-spacing: 0.01px;
+  overflow-wrap: break-word;
+  z-index: 1;
+
+code {
+  display: inline-block;
+  word-wrap: break-word;
+  white-space: normal;
+  margin: 0 0 10px;
+}
+}
+
+.gradient {
+&::before {
+   position: absolute;
+   top: 60%;
+   left: 0;
+   bottom: 0;
+   right: 0;
+   content: "";
+   z-index: 0;
+ }
+}
+}

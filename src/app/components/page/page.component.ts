@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { routerTransition } from '@app/core';
+import {getQuestions, routerTransition} from '@app/core';
+import {Store} from "@ngrx/store";
+import {Observable} from "rxjs/Observable";
 
 @Component({
   selector: 'app-page',
@@ -17,7 +19,9 @@ export class PageComponent implements OnInit {
     { link: 'profile', label: 'Profile' }
   ];
 
-  constructor() { }
+  constructor(private store: Store<any>) {
+
+  }
 
   ngOnInit() { }
 

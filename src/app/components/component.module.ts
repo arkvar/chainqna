@@ -6,8 +6,13 @@ import { EffectsModule } from '@ngrx/effects';
 import { RouterModule } from '@angular/router';
 
 import { PageComponent } from './page/page.component';
+import { QuestionsComponent } from './questions/questions.component';
+import { QuestionComponent } from './question/question.component';
 
 import { SharedModule } from '@app/shared';
+import {questions} from "@app/core";
+import { LoginButtonComponent } from './login-button/login-button.component';
+import { VoteButtonComponent } from './vote-button/vote-button.component';
 
 @NgModule({
   imports: [
@@ -16,10 +21,18 @@ import { SharedModule } from '@app/shared';
     SharedModule
   ],
   declarations: [
-    PageComponent
+    PageComponent,
+    QuestionsComponent,
+    QuestionComponent,
+    LoginButtonComponent,
+    VoteButtonComponent
   ],
   exports: [
-    PageComponent
+    PageComponent,
+    QuestionsComponent,
+    QuestionComponent,
+    LoginButtonComponent,
+    VoteButtonComponent
   ],
 })
 export class ComponentModule { }

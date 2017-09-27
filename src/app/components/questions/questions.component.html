@@ -1,0 +1,5 @@
+<p *ngIf="questions.pending">Loading...</p>
+<question [question]="question"
+      *ngFor="let question of questions.data">
+</question>
+<p *ngIf="questions.error">{{questions.error}}</p>

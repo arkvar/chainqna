@@ -22,7 +22,7 @@
       "styles": [
         "main.scss"
       ],
-      "scripts": [],
+      "scripts": ["assets/steem.min.js"],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
