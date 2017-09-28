@@ -6,11 +6,11 @@ import {Store} from '@ngrx/store';
 import {Observable} from 'rxjs/Observable';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-profile-route',
+  templateUrl: './profile-route.component.html',
+  styleUrls: ['./profile-route.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class ProfileRouteComponent implements OnInit {
 
   animateOnRouteEnter = ANIMATE_ON_ROUTE_ENTER;
 
