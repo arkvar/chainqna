@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import {getQuestions, routerTransition} from '@app/core';
-import {Store} from "@ngrx/store";
-import {Observable} from "rxjs/Observable";
+import {Store} from '@ngrx/store';
+import {Observable} from 'rxjs/Observable';
 
 @Component({
   selector: 'app-page',

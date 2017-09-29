@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 
 import { routerTransition } from '@app/core';
-import {Question} from "@app/question";
+import {Question} from '@app/question';
 
 @Component({
   selector: 'app-question',

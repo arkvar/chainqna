@@ -10,7 +10,7 @@ import { QuestionsComponent } from './questions/questions.component';
 import { QuestionComponent } from './question/question.component';
 
 import { SharedModule } from '@app/shared';
-import {questions} from "@app/core";
+import {questions} from '@app/core';
 import { LoginButtonComponent } from './login-button/login-button.component';
 import { VoteButtonComponent } from './vote-button/vote-button.component';
 import { LogoutButtonComponent } from './logout-button/logout-button.component';

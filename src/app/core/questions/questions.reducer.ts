@@ -1,6 +1,6 @@
-export const GET_QUESTIONS = "GET_QUESTIONS";
-export const GET_QUESTIONS_SUCCESS = "GET_QUESTIONS_SUCCESS";
-export const GET_QUESTIONS_ERROR = "GET_QUESTIONS_ERROR";
+export const GET_QUESTIONS = 'GET_QUESTIONS';
+export const GET_QUESTIONS_SUCCESS = 'GET_QUESTIONS_SUCCESS';
+export const GET_QUESTIONS_ERROR = 'GET_QUESTIONS_ERROR';
 
 export function getQuestions() {
   return {
@@ -15,7 +15,7 @@ const initialState = {
 }
 
 export function questions( state = initialState, { type, payload } ) {
-  switch( type ) {
+  switch ( type ) {
     case GET_QUESTIONS:
       return Object.assign({}, state, {pending: true, error: null})
     case GET_QUESTIONS_SUCCESS:

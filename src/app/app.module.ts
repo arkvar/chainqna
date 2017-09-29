@@ -11,11 +11,11 @@ import { ComponentModule } from '@app/components';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {QuestionsService} from '@app/core/questions/questions.service';
-import {QuestionComponent} from "@app/components/question/question.component";
-import {QuestionsComponent} from "@app/components/questions/questions.component";
-import {ReactiveFormsModule} from "@angular/forms";
-import {VoteService} from "@app/core/vote/vote.service";
-import {UserService} from "@app/core/user/user.service";
+import {QuestionComponent} from '@app/components/question/question.component';
+import {QuestionsComponent} from '@app/components/questions/questions.component';
+import {ReactiveFormsModule} from '@angular/forms';
+import {VoteService} from '@app/core/vote/vote.service';
+import {UserService} from '@app/core/user/user.service';
 
 
 @NgModule({

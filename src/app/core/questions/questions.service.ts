@@ -1,7 +1,7 @@
-import { Injectable } from "@angular/core";
-import {Observable} from "rxjs/Observable";
-import {Question} from "@app/question";
-import {User} from "@app/user";
+import { Injectable } from '@angular/core';
+import {Observable} from 'rxjs/Observable';
+import {Question} from '@app/question';
+import {User} from '@app/user';
 
 declare var steem: any;
 
