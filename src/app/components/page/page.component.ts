@@ -14,6 +14,7 @@ import {Observable} from "rxjs/Observable";
 export class PageComponent implements OnInit {
 
   navigationSideMenu = [
+    { link: 'new-question', label: 'Submit Question' },
     { link: 'questions', label: 'Questions' },
     { link: 'favorites', label: 'Favorites' },
     { link: 'profile', label: 'Profile' }

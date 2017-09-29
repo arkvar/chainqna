@@ -1,1 +1,15 @@
-<p>{{ question.title }} - {{ question.body }}</p>
+<div>
+  <div>
+    AUTHOR: {{ question.author }}
+  </div>
+  <div>
+    TITLE: {{ question.title }}
+  </div>
+  <div>
+    MESSAGE: {{ question.body }}
+  </div>
+  <div>
+    <app-vote-button [question]="question"></app-vote-button>
+  </div>
+</div>
+

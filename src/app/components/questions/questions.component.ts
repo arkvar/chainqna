@@ -3,7 +3,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import { routerTransition } from '@app/core';
 
 @Component({
-  selector: 'questions',
+  selector: 'app-questions',
   templateUrl: './questions.component.html',
   styleUrls: ['./questions.component.scss'],
   animations: [routerTransition]

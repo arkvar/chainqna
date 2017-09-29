@@ -13,6 +13,8 @@ import { SharedModule } from '@app/shared';
 import {questions} from "@app/core";
 import { LoginButtonComponent } from './login-button/login-button.component';
 import { VoteButtonComponent } from './vote-button/vote-button.component';
+import { LogoutButtonComponent } from './logout-button/logout-button.component';
+import { NewQuestionFormComponent } from './new-question-form/new-question-form.component';
 
 @NgModule({
   imports: [
@@ -25,14 +27,18 @@ import { VoteButtonComponent } from './vote-button/vote-button.component';
     QuestionsComponent,
     QuestionComponent,
     LoginButtonComponent,
-    VoteButtonComponent
+    VoteButtonComponent,
+    LogoutButtonComponent,
+    NewQuestionFormComponent
   ],
   exports: [
     PageComponent,
     QuestionsComponent,
     QuestionComponent,
     LoginButtonComponent,
-    VoteButtonComponent
+    VoteButtonComponent,
+    LogoutButtonComponent,
+    NewQuestionFormComponent
   ],
 })
 export class ComponentModule { }

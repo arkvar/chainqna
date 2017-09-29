@@ -13,6 +13,9 @@ import { AppComponent } from './app.component';
 import {QuestionsService} from '@app/core/questions/questions.service';
 import {QuestionComponent} from "@app/components/question/question.component";
 import {QuestionsComponent} from "@app/components/questions/questions.component";
+import {ReactiveFormsModule} from "@angular/forms";
+import {VoteService} from "@app/core/vote/vote.service";
+import {UserService} from "@app/core/user/user.service";
 
 
 @NgModule({
@@ -20,6 +23,8 @@ import {QuestionsComponent} from "@app/components/questions/questions.component"
     // angular
     BrowserAnimationsModule,
     BrowserModule,
+
+    ReactiveFormsModule,
 
     CoreModule,
     SharedModule,
@@ -30,7 +35,7 @@ import {QuestionsComponent} from "@app/components/questions/questions.component"
     AppRoutingModule
   ],
   declarations: [AppComponent],
-  providers: [QuestionsService],
+  providers: [QuestionsService, UserService, VoteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
