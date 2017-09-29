@@ -5,7 +5,7 @@ import { User} from '@app/user';
 export class UserService {
   private currentUser: User;
   constructor() {
-    this.currentUser = new User('seriousownsya', '5HqwijU9p6mcNnk9DaytGz8L5zFU9CcwP1kgdEZCn7EWEE2ytr3');
+    this.currentUser = new User('test-user', 'test-key');
   }
   getUser() {
     return this.currentUser;
