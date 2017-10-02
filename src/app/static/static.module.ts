@@ -9,6 +9,7 @@ import {QuestionsComponent} from '@app/components/questions/questions.component'
 import {QuestionsRouteComponent} from '@app/static/questions-route/questions-route.component';
 import { NewQuestionRouteComponent } from './new-question-route/new-question-route.component';
 import {ProfileRouteComponent} from '@app/static/profile-route/profile-route.component';
+import { LoginRouteComponent } from './login-route/login-route.component';
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import {ProfileRouteComponent} from '@app/static/profile-route/profile-route.com
     HomeComponent,
     QuestionsRouteComponent,
     NewQuestionRouteComponent,
-    ProfileRouteComponent
+    ProfileRouteComponent,
+    LoginRouteComponent
   ]
 })
 export class StaticModule { }

@@ -17,7 +17,8 @@ export class PageComponent implements OnInit {
     { link: 'new-question', label: 'Submit Question' },
     { link: 'questions', label: 'Questions' },
     { link: 'favorites', label: 'Favorites' },
-    { link: 'profile', label: 'Profile' }
+    { link: 'profile', label: 'Profile' },
+    { link: 'login', label: 'Login' }
   ];
 
   constructor(private store: Store<any>) {

@@ -15,6 +15,10 @@ const routes: Routes = [
     redirectTo: 'profile',
     pathMatch: 'full'
   }, {
+    path: 'login',
+    redirectTo: 'login',
+    pathMatch: 'full'
+  }, {
     path: '**',
     redirectTo: 'home'
   }
