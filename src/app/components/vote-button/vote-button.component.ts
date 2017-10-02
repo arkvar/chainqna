@@ -17,8 +17,6 @@ export class VoteButtonComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.question = new Question(this.question.title, this.question.body, this.question.author, this.question.permlink,
-      this.question.active_votes);
     console.log(this.question);
     this.alreadyVoted = this.question.isVoter(this.userService.getUser().name);
   }

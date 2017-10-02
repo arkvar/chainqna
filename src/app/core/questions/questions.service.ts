@@ -2,8 +2,10 @@ import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import {Question} from '@app/question';
 import {User} from '@app/user';
+import 'rxjs/add/observable/fromPromise';
 
 declare var steem: any;
+declare var moment: any;
 
 
 @Injectable()
@@ -14,8 +16,8 @@ export class QuestionsService {
       tag: 'bitcoin',
       limit: 10
     }
-
-    return Observable.fromPromise(steem.api.getDiscussionsByCreatedAsync(query));
+    steem.api.setOptions({ url: 'wss://steemd-int.steemit.com/' });
+    return Observable.fromPromise(steem.api.getDiscussionsByTrendingAsync(query));
 
   }
 

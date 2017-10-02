@@ -11,11 +11,12 @@ import {Question} from '@app/question';
 })
 
 export class QuestionComponent implements OnInit {
-
   @Input() question: Question;
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.question = new Question(this.question);
+  }
 
 }

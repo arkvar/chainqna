@@ -1,13 +1,29 @@
 import {Vote} from '@app/vote';
 
 export class Question {
-  title: String;
-  body: String;
-  author: String;
-  permlink: String;
-  active_votes: Array<Vote>;
-  totalVotes: Number;
+  title: String = '';
+  body: String = '';
+  author: String = '';
+  permlink: String = '';
+  active_votes: Array<Vote>  = new Array<Vote>();
+  children: Number = 0;
+  pending_payout_value: String = '0 SBD';
 
+  constructor(origin: any = null) {
+    if (origin === null) {
+      return;
+    }
+    this.title = origin.title;
+    this.body = origin.body;
+    this.author = origin.author;
+    this.permlink = origin.permlink;
+    for (const vote of origin.active_votes) {
+      this.active_votes.push(new Vote(vote.voter));
+    }
+    this.children = origin.children;
+    this.pending_payout_value = origin.pending_payout_value;
+  }
+/*
   constructor(title: String = '', body: String = '', author: String = '', permlink: String = '',
               active_votes: Array<Vote> = new Array<Vote>()) {
     this.active_votes = new Array<Vote>();
@@ -19,10 +35,9 @@ export class Question {
       this.active_votes.push(new Vote(vote.voter));
     }
   }
-
+*/
   public isVoter(name: String): Boolean {
     for (const vote of this.active_votes) {
-      console.log(vote.voter);
       if (vote.voter === name) {
         return true;
       }

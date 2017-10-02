@@ -9,6 +9,12 @@
     MESSAGE: {{ question.body }}
   </div>
   <div>
+    REPLIES: {{ question.children }}
+  </div>
+  <div>
+    PAYOUT: {{ question.pending_payout_value }}
+  </div>
+  <div>
     <app-vote-button [question]="question"></app-vote-button>
   </div>
 </div>

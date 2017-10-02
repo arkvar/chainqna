@@ -3,6 +3,10 @@ import { Actions, Effect } from '@ngrx/effects';
 import { Observable } from 'rxjs/Observable';
 import { GET_QUESTIONS, GET_QUESTIONS_SUCCESS, GET_QUESTIONS_ERROR } from './questions.reducer';
 import { QuestionsService } from './questions.service';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/observable/of';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/switchMap';
 
 @Injectable()
 export class QuestionsEffects {
