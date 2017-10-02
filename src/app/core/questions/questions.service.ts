@@ -57,7 +57,7 @@ export class QuestionsService {
         ]
       }]
     ];
-    //console.log(operations);
+    // console.log(operations);
     return Observable.fromPromise(steem.broadcast.sendAsync(
       { operations, extensions: [] },
       { posting: postingWif }

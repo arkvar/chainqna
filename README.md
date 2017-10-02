@@ -46,4 +46,5 @@ Development, build and quality processes are based on [angular-cli](https://gith
 - [RxJS](http://reactivex.io/rxjs)
 - [ngx-translate](https://github.com/ngx-translate/core)
 - [Lodash](https://lodash.com)
-- [Steem.js] (https://github.com/steemit/steem-js)
+- [Steem.js](https://github.com/steemit/steem-js)
+- [Moment.js](https://momentjs.com/)
