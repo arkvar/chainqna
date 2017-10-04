@@ -1,15 +1,15 @@
 <md-list>
     <md-list-item> 
       <md-form-field>
-        <input name="username" mdInput placeholder="Username" value="" [(ngModel)]="user.name">
+        <input name="username" mdInput placeholder="Username" value="" [(ngModel)]="user.name" />
       </md-form-field>
     </md-list-item>
     <md-list-item> 
       <md-form-field>
-        <input type="password" mdInput placeholder="PostingKey" value="" [(ngModel)]="user.postKey" name="post-key">
+        <input type="password" mdInput placeholder="PostingKey" value="" [(ngModel)]="user.postKey" name="post-key" />
       </md-form-field>
     </md-list-item>
     <md-list-item>
-      <button md-raised-button (click)="login()">Login</button>
+      <button md-raised-button md-dialog-close (click)="login()">Login</button><button md-raised-button md-dialog-close>Cancel</button>
     </md-list-item>
 </md-list>

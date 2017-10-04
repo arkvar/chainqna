@@ -17,6 +17,7 @@ import { LogoutButtonComponent } from './logout-button/logout-button.component';
 import { NewQuestionFormComponent } from './new-question-form/new-question-form.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LoginFormComponent } from './login-form/login-form.component';
+import { LoginDialogComponent } from './login-dialog/login-dialog.component';
 
 @NgModule({
   imports: [
@@ -33,8 +34,9 @@ import { LoginFormComponent } from './login-form/login-form.component';
     LogoutButtonComponent,
     NewQuestionFormComponent,
     ProfileComponent,
-    LoginFormComponent
-],
+    LoginFormComponent,
+    LoginDialogComponent
+  ],
   exports: [
     PageComponent,
     QuestionsComponent,
@@ -44,7 +46,11 @@ import { LoginFormComponent } from './login-form/login-form.component';
     LogoutButtonComponent,
     NewQuestionFormComponent,
     ProfileComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    LoginDialogComponent
   ],
+  entryComponents: [
+    LoginDialogComponent
+  ]
 })
 export class ComponentModule { }
