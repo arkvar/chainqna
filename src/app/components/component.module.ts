@@ -15,6 +15,8 @@ import { LoginButtonComponent } from './login-button/login-button.component';
 import { VoteButtonComponent } from './vote-button/vote-button.component';
 import { LogoutButtonComponent } from './logout-button/logout-button.component';
 import { NewQuestionFormComponent } from './new-question-form/new-question-form.component';
+import { ProfileComponent } from './profile/profile.component';
+import { LoginFormComponent } from './login-form/login-form.component';
 
 @NgModule({
   imports: [
@@ -29,8 +31,10 @@ import { NewQuestionFormComponent } from './new-question-form/new-question-form.
     LoginButtonComponent,
     VoteButtonComponent,
     LogoutButtonComponent,
-    NewQuestionFormComponent
-  ],
+    NewQuestionFormComponent,
+    ProfileComponent,
+    LoginFormComponent
+],
   exports: [
     PageComponent,
     QuestionsComponent,
@@ -38,7 +42,9 @@ import { NewQuestionFormComponent } from './new-question-form/new-question-form.
     LoginButtonComponent,
     VoteButtonComponent,
     LogoutButtonComponent,
-    NewQuestionFormComponent
+    NewQuestionFormComponent,
+    ProfileComponent,
+    LoginFormComponent
   ],
 })
 export class ComponentModule { }

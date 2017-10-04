@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {UserService} from '@app/core/user/user.service';
-import {User} from '@app/user';
 import {Router} from '@angular/router';
 
 @Component({
@@ -9,18 +7,11 @@ import {Router} from '@angular/router';
   styleUrls: ['./login-route.component.scss']
 })
 export class LoginRouteComponent implements OnInit {
-  user: User = new User();
-  constructor(private userService: UserService, private router: Router) {
+  constructor() {
 
   }
 
   ngOnInit() {
-    this.userService.setUser(new User());
-  }
-
-  login() {
-    this.userService.setUser(this.user);
-    this.router.navigateByUrl('questions');
   }
 
 }
