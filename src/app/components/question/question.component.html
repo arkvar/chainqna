@@ -1,4 +1,4 @@
-<div>
+<md-card>
   <div>
     AUTHOR: {{ question.author }}
   </div>
@@ -6,7 +6,7 @@
     TITLE: {{ question.title }}
   </div>
   <div>
-    MESSAGE: {{ question.body }}
+    MESSAGE: {{ question.body | slice:0:256 }}
   </div>
   <div>
     REPLIES: {{ question.children }}
@@ -17,5 +17,5 @@
   <div>
     <app-vote-button [question]="question"></app-vote-button>
   </div>
-</div>
+</md-card>
 

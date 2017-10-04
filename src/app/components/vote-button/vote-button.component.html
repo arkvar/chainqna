@@ -1,4 +1,4 @@
 <div>
-  <p>VOTES: {{question.active_votes.length}} <button *ngIf="!alreadyVoted" (click)="vote()">Vote</button>
-    <button *ngIf="alreadyVoted" (click)="unvote()">Unvote</button></p>
+  VOTES: {{question.active_votes.length}} <button md-raised-button *ngIf="!alreadyVoted" (click)="vote()">Vote</button>
+    <button md-raised-button *ngIf="alreadyVoted" (click)="unvote()">Unvote</button>
 </div>
