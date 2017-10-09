@@ -1,20 +1,20 @@
-<md-sidenav-container>
+<mat-sidenav-container>
 
-  <md-sidenav #sidenav mode="slide">
+  <mat-sidenav #sidenav mode="slide">
     <div class="branding">Chain QnA</div>
-    <md-nav-list>
-      <a md-list-item *ngFor="let item of navigationSideMenu" (click)="sidenav.close()"
+    <mat-nav-list>
+      <a mat-list-item *ngFor="let item of navigationSideMenu" (click)="sidenav.close()"
          [routerLink]="[item.link]" routerLinkActive="active">
         {{item.label}}
       </a>
-    </md-nav-list>
-  </md-sidenav>
+    </mat-nav-list>
+  </mat-sidenav>
 
   <div class="wrapper">
 
-    <md-toolbar color="primary">
-      <button md-icon-button (click)="sidenav.open()">
-        <md-icon>menu</md-icon>
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)="sidenav.open()">
+        <mat-icon>menu</mat-icon>
       </button>
 
       <span routerLink="" class="branding spacer text-center"><img
@@ -22,15 +22,15 @@
       
       <app-login-button></app-login-button>
 
-      <a mdTooltip="Project Github Repository"
-         mdTooltipPosition="before"
-         md-icon-button class="link"
+      <a matTooltip="Project Github Repository"
+         matTooltipPosition="before"
+         mat-icon-button class="link"
          href="https://github.com/arkvar/chainqna"
          target="_blank">
         <i class="fa fa-github fa-2x"></i>
       </a>
 
-    </md-toolbar>
+    </mat-toolbar>
 
     <div class="content"
          [@routerTransition]="o.isActivated && o.activatedRoute.routeConfig.path">
@@ -47,4 +47,4 @@
 
   </div>
 
-</md-sidenav-container>
+</mat-sidenav-container>

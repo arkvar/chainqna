@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { OverlayContainer } from '@angular/material';
+import { OverlayContainer } from '@angular/cdk/overlay';
 import {Store} from '@ngrx/store';
 import {getQuestions} from '@app/core';
 import {Observable} from 'rxjs/Observable';
@@ -12,7 +12,7 @@ import {Observable} from 'rxjs/Observable';
 export class AppComponent implements OnInit {
 
   constructor(public overlayContainer: OverlayContainer) {
-    overlayContainer.themeClass = 'app-theme';
+    overlayContainer.getContainerElement().classList.add('my-theme-class');
   }
 
   ngOnInit(): void { }

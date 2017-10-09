@@ -1,6 +1,6 @@
 import { User } from '@app/user';
 import { Component, OnInit, Inject } from '@angular/core';
-import {MdDialog, MdDialogRef, MD_DIALOG_DATA} from '@angular/material';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
 @Component({
   selector: 'app-login-dialog',
@@ -10,8 +10,8 @@ import {MdDialog, MdDialogRef, MD_DIALOG_DATA} from '@angular/material';
 export class LoginDialogComponent implements OnInit {
 
   constructor(
-    public dialogRef: MdDialogRef<LoginDialogComponent>,
-    @Inject(MD_DIALOG_DATA) public data: User) { }
+    public dialogRef: MatDialogRef<LoginDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: User) { }
 
   onNoClick(): void {
     this.dialogRef.close();
