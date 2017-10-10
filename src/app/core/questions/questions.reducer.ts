@@ -8,13 +8,13 @@ export function getQuestions() {
   }
 }
 
-const initialState = {
+const initialStateQuestions = {
   data: [],
   pending: false,
   error: null
 }
 
-export function questions( state = initialState, { type, payload } ) {
+export function questions( state = initialStateQuestions, { type, payload } ) {
   switch ( type ) {
     case GET_QUESTIONS:
       return Object.assign({}, state, {pending: true, error: null})

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Actions, Effect } from '@ngrx/effects';
+import { Actions, Effect, toPayload } from '@ngrx/effects';
 import { Observable } from 'rxjs/Observable';
 import { GET_QUESTIONS, GET_QUESTIONS_SUCCESS, GET_QUESTIONS_ERROR } from './questions.reducer';
 import { QuestionsService } from './questions.service';

@@ -1,0 +1,5 @@
+<p *ngIf="replies.pending">Loading...</p>
+<app-reply [reply]="reply"
+      *ngFor="let reply of replies.data">
+</app-reply>
+<p *ngIf="replies.error">{{replies.error}}</p>

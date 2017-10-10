@@ -1,3 +1,4 @@
+import { QuestionDetailRouteComponent } from './components/question-detail-route/question-detail-route.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -10,6 +11,9 @@ const routes: Routes = [
     path: 'questions',
     redirectTo: 'questions',
     pathMatch: 'full'
+  }, {
+    path: 'question/:author/:permlink',
+    component: QuestionDetailRouteComponent
   }, {
     path: 'profile',
     redirectTo: 'profile',

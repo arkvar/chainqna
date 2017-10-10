@@ -15,6 +15,7 @@ export class QuestionsRouteComponent implements OnInit {
   constructor(private store: Store<any>) {
     this.store.dispatch(getQuestions());
     this.questions = this.store.select('questions');
+    // console.log(this.questions);
   }
 
   ngOnInit() {}

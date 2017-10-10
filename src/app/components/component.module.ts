@@ -18,6 +18,10 @@ import { NewQuestionFormComponent } from './new-question-form/new-question-form.
 import { ProfileComponent } from './profile/profile.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { LoginDialogComponent } from './login-dialog/login-dialog.component';
+import { QuestionDetailComponent } from './question-detail/question-detail.component';
+import { RepliesComponent } from './replies/replies.component';
+import { ReplyComponent } from './reply/reply.component';
+import { QuestionDetailRouteComponent } from './question-detail-route/question-detail-route.component';
 
 @NgModule({
   imports: [
@@ -35,8 +39,12 @@ import { LoginDialogComponent } from './login-dialog/login-dialog.component';
     NewQuestionFormComponent,
     ProfileComponent,
     LoginFormComponent,
-    LoginDialogComponent
-  ],
+    LoginDialogComponent,
+    QuestionDetailComponent,
+    RepliesComponent,
+    ReplyComponent,
+    QuestionDetailRouteComponent
+],
   exports: [
     PageComponent,
     QuestionsComponent,
@@ -47,7 +55,11 @@ import { LoginDialogComponent } from './login-dialog/login-dialog.component';
     NewQuestionFormComponent,
     ProfileComponent,
     LoginFormComponent,
-    LoginDialogComponent
+    LoginDialogComponent,
+    QuestionDetailComponent,
+    RepliesComponent,
+    ReplyComponent,
+    QuestionDetailRouteComponent
   ],
   entryComponents: [
     LoginDialogComponent

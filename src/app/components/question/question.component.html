@@ -17,5 +17,10 @@
   <div>
     <app-vote-button [question]="question"></app-vote-button>
   </div>
+  <div>
+      <a [routerLink]="['/question', question.author, question.permlink]">
+        QUESTION DETAILS LINK
+      </a>
+  </div>
 </mat-card>
 

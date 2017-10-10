@@ -17,8 +17,19 @@ export class QuestionsService {
       limit: 10
     }
     steem.api.setOptions({ url: 'wss://steemd-int.steemit.com/' });
+    // console.log(steem.api.getDiscussionsByTrendingAsync(query));
     return Observable.fromPromise(steem.api.getDiscussionsByTrendingAsync(query));
+  }
 
+  getQuestion(author: String, permlink: String) {
+    steem.api.setOptions({ url: 'wss://steemd-int.steemit.com/' });
+    // console.log(steem.api.getContentAsync(author, permlink));
+    return Observable.fromPromise(steem.api.getContentAsync(author, permlink));
+  }
+
+  getReplies(author: String, permlink: String) {
+    steem.api.setOptions({ url: 'wss://steemd-int.steemit.com/' });
+    return Observable.fromPromise(steem.api.getContentRepliesAsync(author, permlink));
   }
 
   newQuestion(question: Question, user: User) {

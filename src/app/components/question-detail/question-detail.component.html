@@ -1,0 +1,12 @@
+<p *ngIf="question.pending">Loading...</p>
+<div *ngIf="question.data">
+  <div>
+    Author: {{ question.data.author }}
+  </div>
+  <div>
+    Title: {{ question.data.title }}
+  </div>
+  <div>
+    Content: {{ question.data.body }}
+  </div>
+</div>
