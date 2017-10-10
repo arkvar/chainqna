@@ -16,11 +16,12 @@ export class NewQuestionFormComponent implements OnInit {
   qs: any;
 
   constructor(private userService: UserService, questionsService: QuestionsService) {
-    this.model.author = userService.getUser().name;
     this.qs = questionsService;
   }
 
   ngOnInit() {
+    this.user = this.userService.getUser();
+    this.model.author = this.user.name;
   }
 
   onSubmit() {
