@@ -17,11 +17,11 @@ const initialStateQuestions = {
 export function questions( state = initialStateQuestions, { type, payload } ) {
   switch ( type ) {
     case GET_QUESTIONS:
-      return Object.assign({}, state, {pending: true, error: null})
+      return Object.assign({}, state, {data: initialStateQuestions.data, pending: true, error: null})
     case GET_QUESTIONS_SUCCESS:
-      return Object.assign({}, state, {data: payload, pending: false})
+      return Object.assign({}, state, {data: payload, pending: false, error: null})
     case GET_QUESTIONS_ERROR:
-      return Object.assign({}, state, {pending: false, error: 'Error'})
+      return Object.assign({}, state, {data: initialStateQuestions.data, pending: false, error: 'Error'})
     default:
       return state;
   }
