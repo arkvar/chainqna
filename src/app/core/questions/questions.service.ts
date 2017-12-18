@@ -23,12 +23,13 @@ export class QuestionsService {
 
   getQuestion(author: String, permlink: String) {
     steem.api.setOptions({ url: 'wss://steemd-int.steemit.com/' });
-    // console.log(steem.api.getContentAsync(author, permlink));
+    console.log(steem.api.getContentAsync(author, permlink));
     return Observable.fromPromise(steem.api.getContentAsync(author, permlink));
   }
 
   getReplies(author: String, permlink: String) {
     steem.api.setOptions({ url: 'wss://steemd-int.steemit.com/' });
+    console.log(steem.api.getContentRepliesAsync(author, permlink));
     return Observable.fromPromise(steem.api.getContentRepliesAsync(author, permlink));
   }
 

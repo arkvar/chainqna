@@ -9,8 +9,10 @@ import { authReducer } from './auth/auth.reducer';
 import { AuthEffects } from './auth/auth.effects';
 import {QuestionsEffects} from '@app/core/questions/questions.effects';
 import {QuestionEffects} from '@app/core/questions/question.effects';
+import { RepliesEffects } from './questions/replies.effects';
 import {questions} from '@app/core/questions/questions.reducer';
 import {question} from '@app/core/questions/question.reducer';
+import { replies } from './questions/replies.reducer';
 import {UserService} from '@app/core/user/user.service';
 import {VoteService} from '@app/core/vote/vote.service';
 import {QuestionsService} from '@app/core/questions/questions.service';
@@ -32,9 +34,10 @@ export function getInitialState() {
     EffectsModule.forRoot([AuthEffects]),
     StoreModule.forRoot({
       questions: questions,
-      question: question
+      question: question,
+      replies: replies
     }, { }),
-    EffectsModule.forRoot([QuestionsEffects, QuestionEffects]),
+    EffectsModule.forRoot([QuestionsEffects, QuestionEffects, RepliesEffects]),
   ],
   declarations: [],
   providers: [LocalStorageService, UserService, VoteService, QuestionsService]

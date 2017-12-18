@@ -7,11 +7,15 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./reply.component.scss']
 })
 export class ReplyComponent implements OnInit {
-  @Input() reply: Reply;
-  constructor() { }
+  @Input() reply: any;
+  constructor() {
+    console.log(this.reply);
+  }
 
   ngOnInit() {
+    console.log(this.reply);
     this.reply = new Reply(this.reply);
+    console.log(this.reply);
   }
 
 }

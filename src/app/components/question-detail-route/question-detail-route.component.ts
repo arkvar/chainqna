@@ -1,7 +1,6 @@
 import { Store } from '@ngrx/store';
 import { Question } from './../../question';
 import { Observable } from 'rxjs/Observable';
-import { QuestionsService } from '@app/core/questions/questions.service';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import 'rxjs/add/operator/switchMap';
@@ -14,14 +13,17 @@ import 'rxjs/add/operator/switchMap';
 export class QuestionDetailRouteComponent implements OnInit {
   // question$: Observable<Question>;
   question: Observable<any>;
-  constructor(private route: ActivatedRoute, private router: Router, private qs: QuestionsService, private store: Store<any>) {
+  // replies: Observable<any>;
+  constructor(private route: ActivatedRoute, private router: Router, private store: Store<any>) {
     const author = this.route.snapshot.paramMap.get('author');
     const permlink = this.route.snapshot.paramMap.get('permlink');
-    console.log(author + '/' + permlink);
+    // console.log(author + '/' + permlink);
     this.store.dispatch({type: 'GET_QUESTION', payload: {author: author, permlink: permlink}});
     // this.store.dispatch(getQuestion(author, permlink));
     this.question = this.store.select('question');
-    console.log(this.question);
+    // console.log(this.question);
+    // this.store.dispatch({ type: 'GET_REPLIES', payload: { author: author, permlink: permlink } });
+    // this.replies = this.store.select('replies');
    }
 
   ngOnInit() {
