@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Question} from '@app/question';
 import {VoteService} from '@app/core/vote/vote.service';
-import {UserService} from '@app/core/user/user.service';
+import {UserService} from '../../core/users';
 
 @Component({
   selector: 'app-vote-button',
@@ -17,12 +17,12 @@ export class VoteButtonComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.question);
-    this.alreadyVoted = this.question.isVoter(this.userService.getUser().name);
+    // console.log(this.question);
+    this.alreadyVoted = this.question.isVoter(this.userService.getUser().uid);
   }
 
   vote(): void {
-    console.log(this.question);
+    // console.log(this.question);
     this.voteService.vote(this.question);
   }
 

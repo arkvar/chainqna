@@ -1,6 +1,8 @@
+import { UserFacade } from './../../core/users/user.facade';
+import { Store } from '@ngrx/store';
 import { Router } from '@angular/router';
-import { User } from './../../user';
-import { UserService } from './../../core/user/user.service';
+import { User } from './../../core/users';
+import { UserService } from '../../core/users';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -10,15 +12,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginFormComponent implements OnInit {
   user: User = new User('', '');
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(private userService: UserFacade, private router: Router, private store: Store<any>) { }
 
   ngOnInit() {
-    this.userService.setUser(new User());
+    // this.userService.setUser(new User());
   }
 
   login() {
-    this.userService.setUser(this.user);
-    this.router.navigate(['/profile']);
+    // console.log(this.user);
+    // console.log(this.userService);
+    this.userService.login(this.user.uid, this.user.postKey).subscribe(user => {
+      // console.log(user);
+    });
+    // this.store.dispatch({type: 'AUTH_LOGIN', payload: {name: this.user.name, postKey: this.user.postKey}});
+    // this.userService.setUser(this.user);
+    // this.router.navigate(['/profile']);
   }
 
 }

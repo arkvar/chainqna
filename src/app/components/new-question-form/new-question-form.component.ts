@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {UserService} from '@app/core/user/user.service';
+import {UserService} from '../../core/users';
 import {Question} from '@app/question';
-import {User} from '@app/user';
+import {User} from '../../core/users';
 import {QuestionsService} from '@app/core/questions/questions.service';
 
 @Component({
@@ -12,7 +12,7 @@ import {QuestionsService} from '@app/core/questions/questions.service';
 export class NewQuestionFormComponent implements OnInit {
   submitted = false;
   model = new Question();
-  user = new User();
+  user = new User('', '');
   qs: any;
 
   constructor(private userService: UserService, questionsService: QuestionsService) {
@@ -21,7 +21,7 @@ export class NewQuestionFormComponent implements OnInit {
 
   ngOnInit() {
     this.user = this.userService.getUser();
-    this.model.author = this.user.name;
+    this.model.author = this.user.uid;
   }
 
   onSubmit() {
@@ -30,6 +30,6 @@ export class NewQuestionFormComponent implements OnInit {
   }
 
   // TODO: Remove this when we're done
-  get diagnostic() { return JSON.stringify(this.model); }
+  // get diagnostic() { return JSON.stringify(this.model); }
 
 }

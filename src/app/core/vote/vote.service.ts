@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs/Observable';
-import {UserService} from '@app/core/user/user.service';
+import {UserService} from '../users';
 import {Question} from '@app/question';
-import {User} from '@app/user';
+import {User} from '../users';
 declare var steem: any;
 @Injectable()
 export class VoteService {
@@ -12,7 +12,7 @@ export class VoteService {
   }
   vote(question: Question ) {
     const wif = this.user.postKey;
-    const voter = this.user.name;
+    const voter = this.user.uid;
     const author = question.author;
     const weight = 1000;
     const permlink = question.permlink;

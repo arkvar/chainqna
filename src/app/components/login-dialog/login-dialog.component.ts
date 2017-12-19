@@ -1,4 +1,4 @@
-import { User } from '@app/user';
+import { User } from '../../core/users';
 import { Component, OnInit, Inject } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 

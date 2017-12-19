@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import {Question} from '@app/question';
-import {User} from '@app/user';
+import {User} from '../users';
 import 'rxjs/add/observable/fromPromise';
 
 declare var steem: any;
@@ -13,8 +13,8 @@ export class QuestionsService {
 
   getQuestions() {
     const query = {
-      tag: 'bitcoin',
-      limit: 10
+      tag: 'ethereum',
+      limit: 100
     }
     steem.api.setOptions({ url: 'wss://steemd-int.steemit.com/' });
     // console.log(steem.api.getDiscussionsByTrendingAsync(query));
@@ -42,7 +42,7 @@ export class QuestionsService {
         {
           parent_author: '',
           parent_permlink: 'chainqna',
-          author: user.name,
+          author: user.uid,
           permlink,
           title: question.title,
           body: question.body,
@@ -54,7 +54,7 @@ export class QuestionsService {
         }
       ],
       ['comment_options', {
-        author: user.name,
+        author: user.uid,
         permlink,
         max_accepted_payout: '1000000.000 SBD',
         percent_steem_dollars: 10000,

@@ -18,13 +18,6 @@ export class QuestionEffects {
         .map(question => ({type: GET_QUESTION_SUCCESS, payload: question}))
         .catch(() => Observable.of({type: GET_QUESTION_ERROR})));
 
-  // @Effect() getQuestion$ = this.actions$
-  // .ofType(GET_QUESTION)
-  // .switchMap(action =>
-  //   this.questionsService.getQuestion('richcg', 'bitshares-new-website-last-update-before-it-goes-live')
-  //     .map(question => ({type: GET_QUESTION_SUCCESS, payload: question}))
-  //     .catch(() => Observable.of({type: GET_QUESTION_ERROR})));
-
   constructor( private actions$: Actions,
                private questionsService: QuestionsService ) {
   }

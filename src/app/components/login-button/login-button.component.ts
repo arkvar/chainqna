@@ -1,5 +1,5 @@
 import { LoginDialogComponent } from './../login-dialog/login-dialog.component';
-import { User } from '@app/user';
+import { User } from '../../core/users';
 import { Component, OnInit } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
@@ -18,12 +18,12 @@ export class LoginButtonComponent implements OnInit {
   openDialog(): void {
     const dialogRef = this.dialog.open(LoginDialogComponent, {
       width: '250px',
-      data: new User()
+      data: new User('', '')
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      console.log(result);
+      // console.log('The dialog was closed');
+      // console.log(result);
     });
   }
 
