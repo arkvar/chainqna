@@ -15,7 +15,7 @@ export class VoteService {
     const voter = this.user.uid;
     const weight = 1000;
     steem.api.setOptions({ url: 'wss://steemd-int.steemit.com/' });
-    return Observable.fromPromise(steem.broadcast.vote(wif, voter, author, permlink, weight));
+    return Observable.fromPromise(steem.broadcast.voteAsync(wif, voter, author, permlink, weight));
   }
 
   isVoter(voters: Array<any>): boolean {

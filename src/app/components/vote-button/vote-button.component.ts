@@ -24,8 +24,10 @@ export class VoteButtonComponent implements OnInit {
   }
 
   vote(): void {
-    const voting = this.voteService.vote(this.author, this.permlink);
-    console.log(voting);
+    const voting = this.voteService.vote(this.author, this.permlink).subscribe(res => {
+      this.voters.push({voter: this.userService.getUser().uid});
+      this.alreadyVoted = true;
+    }, (err: any) => console.error(err));
   }
 
   unvote(): void {
