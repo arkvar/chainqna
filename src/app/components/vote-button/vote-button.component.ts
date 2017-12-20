@@ -19,13 +19,13 @@ export class VoteButtonComponent implements OnInit {
 
   ngOnInit(): void {
     // console.log(this.question);
-    this.alreadyVoted = false;
+    this.alreadyVoted = this.voteService.isVoter(this.voters);
     // this.alreadyVoted = this.question.isVoter(this.userService.getUser().uid);
   }
 
   vote(): void {
-    // console.log(this.question);
-    this.voteService.vote(this.author, this.permlink);
+    const voting = this.voteService.vote(this.author, this.permlink);
+    console.log(voting);
   }
 
   unvote(): void {
