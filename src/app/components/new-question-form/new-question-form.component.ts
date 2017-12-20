@@ -25,7 +25,9 @@ export class NewQuestionFormComponent implements OnInit {
   }
 
   onSubmit() {
-    this.qs.newQuestion(this.model, this.user);
+    this.qs.newQuestion(this.model, this.user).subscribe(res => {
+      console.log(res);
+    });
     this.submitted = true;
   }
 

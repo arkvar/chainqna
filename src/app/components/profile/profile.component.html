@@ -1,4 +1,9 @@
 <mat-card>
   <img src="https://img.busy.org/@{{ user.uid }}" />
   {{ user.uid }}
+  <div *ngIf="profile">
+    <div *ngFor="let key of objectKeys">
+       {{key + ' : ' + profile[key]}}
+    </div>
+  </div>
 </mat-card>

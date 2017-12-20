@@ -32,6 +32,11 @@ export class AuthService {
         return Observable.throw(new Error('not implemented yet'));
     }
 
+    getFullAccount(name: string) {
+        steem.api.setOptions({ url: 'wss://steemd-int.steemit.com/' });
+        return Observable.fromPromise(steem.api.getAccountsAsync([name]));
+    }
+
     private getAccounts(name: String) {
         steem.api.setOptions({ url: 'wss://steemd-int.steemit.com/' });
         return steem.api.getAccounts([name]);
