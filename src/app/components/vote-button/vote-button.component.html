@@ -1,4 +1,4 @@
 <div>
-  VOTES: {{question.active_votes.length}} <button mat-raised-button *ngIf="!alreadyVoted" (click)="vote()">Vote</button>
+  VOTES: {{voters.length}} <button mat-raised-button *ngIf="!alreadyVoted" (click)="vote()">Vote</button>
     <button mat-raised-button *ngIf="alreadyVoted" (click)="unvote()">Unvote</button>
 </div>

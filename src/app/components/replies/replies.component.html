@@ -1,6 +1,9 @@
 <p *ngIf="replies.pending">Loading...</p>
 <p *ngIf="replies.data">
-      <app-reply [reply]="reply" *ngFor="let reply of replies.data">
-      </app-reply>
+      <mat-card *ngFor="let reply of replies.data">
+            
+            <app-reply [reply]="reply">
+            </app-reply>
+      </mat-card>
 </p>
 <p *ngIf="replies.error">{{replies.error}}</p>

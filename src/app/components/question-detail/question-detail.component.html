@@ -9,5 +9,14 @@
   <div>
     Content: {{ question.data.body }}
   </div>
+  <div>
+    REPLIES: {{ question.data.children }}
+  </div>
+  <div>
+    PAYOUT: {{ question.data.pending_payout_value }}
+  </div>
+  <div>
+    <app-vote-button [author]="question.data.author" [permlink]="question.data.permlink" [voters]="question.data.active_votes"></app-vote-button>
+  </div>
   <app-replies [replies]="replies | async"></app-replies>
 </div>

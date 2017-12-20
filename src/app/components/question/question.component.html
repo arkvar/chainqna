@@ -15,7 +15,7 @@
     PAYOUT: {{ question.pending_payout_value }}
   </div>
   <div>
-    <app-vote-button [question]="question"></app-vote-button>
+    <app-vote-button [author]="question.author" [permlink]="question.permlink" [voters]="question.active_votes"></app-vote-button>
   </div>
   <div>
       <a [routerLink]="['/question', question.author, question.permlink]">

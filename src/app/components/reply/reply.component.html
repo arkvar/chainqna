@@ -1,8 +1,16 @@
-<mat-card>
   <div>
     {{ reply.author }}:
   </div>
   <div>
     {{ reply.body }}
   </div>
-</mat-card>
+  <app-vote-button [author]="reply.author" [permlink]="reply.permlink" [voters]="reply.active_votes"></app-vote-button>
+  <div *ngIf="replies | async">
+    <mat-card *ngFor="let reply of replies | async">
+      <app-reply [reply]="reply">
+      </app-reply>
+    </mat-card>
+  </div>
+  <div *ngIf="showMore">
+    <button mat-raised-button>Show more comments</button>
+  </div>

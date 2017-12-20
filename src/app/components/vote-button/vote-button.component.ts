@@ -1,5 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Question} from '@app/question';
 import {VoteService} from '@app/core/vote/vote.service';
 import {UserService} from '../../core/users';
 
@@ -9,7 +8,9 @@ import {UserService} from '../../core/users';
   styleUrls: ['./vote-button.component.scss']
 })
 export class VoteButtonComponent implements OnInit {
-  @Input() question: Question;
+  @Input() author: string;
+  @Input() permlink: string;
+  @Input() voters: Array<any>;
   private alreadyVoted: Boolean = false;
 
   constructor(private userService: UserService, private voteService: VoteService) {
@@ -18,12 +19,13 @@ export class VoteButtonComponent implements OnInit {
 
   ngOnInit(): void {
     // console.log(this.question);
-    this.alreadyVoted = this.question.isVoter(this.userService.getUser().uid);
+    this.alreadyVoted = false;
+    // this.alreadyVoted = this.question.isVoter(this.userService.getUser().uid);
   }
 
   vote(): void {
     // console.log(this.question);
-    this.voteService.vote(this.question);
+    this.voteService.vote(this.author, this.permlink);
   }
 
   unvote(): void {
