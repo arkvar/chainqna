@@ -1,3 +1,5 @@
+import { User } from './../../core/users/user.model';
+import { UserFacade } from './../../core/users/user.facade';
 import { Component, OnInit } from '@angular/core';
 
 import {getQuestions, routerTransition} from '@app/core';
@@ -19,8 +21,9 @@ export class PageComponent implements OnInit {
     { link: 'favorites', label: 'Favorites' },
     { link: 'profile', label: 'Profile' }
   ];
+  user$: Observable<User> = this.userService.user$;
 
-  constructor(private store: Store<any>) {
+  constructor(private store: Store<any>, private userService: UserFacade) {
 
   }
 

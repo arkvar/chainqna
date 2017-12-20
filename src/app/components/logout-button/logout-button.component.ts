@@ -1,4 +1,6 @@
+import { UserFacade } from './../../core/users/user.facade';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-logout-button',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LogoutButtonComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userService: UserFacade) { }
 
   ngOnInit() {
+  }
+
+  logout() {
+    // this.userService.logout().subscribe(result => {
+    //   console.log(result);
+    // })
+    this.userService.logout().map(results => {
+      console.log(results);
+    }).catch(err => {
+      console.log(err);
+      return Observable.of(new Error(err));
+    })
   }
 
 }

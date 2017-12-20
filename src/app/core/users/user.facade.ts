@@ -63,7 +63,7 @@ export class UserFacade {
      @Effect() login$: Observable<Action> = this.actions$.ofType(userActions.STEEM_LOGIN)
                  .map((action: userActions.SteemLogin) => action.payload)
                  .switchMap(payload => {
-                    //  console.log(payload);
+                     console.log(payload);
                      return this.authService.tryLogin(payload.uid, payload.postKey);
                  })
                  .map( newUser => {
@@ -75,17 +75,17 @@ export class UserFacade {
                      return new userActions.GetUser(newUser.value);
                  })
                  .catch(err => {
+                     console.log(err);
                      return Observable.of(new userActions.AuthError({error: err.message}));
                  });
 
 
      @Effect() logout$: Observable<Action> = this.actions$.ofType(userActions.LOGOUT)
                  .map((action: userActions.Logout) => action.payload )
-                 .switchMap(payload => {
-                     return this.authService.logout();
-                 })
-                 .map( authData => {
-                     return new userActions.NotAuthenticated();
+                 .map(payload => {
+                    this.userService.setUser(new User(null, ''));
+                    return new userActions.NotAuthenticated();
+                    //  return this.authService.logout();
                  })
                  .catch(err => Observable.of(new userActions.AuthError({error: err.message})) );
 
@@ -112,7 +112,7 @@ export class UserFacade {
    *
    */
   login(uid: string, postKey: string): Observable<User> {
-    console.log('UserFacade::login(uid, postkey)');
+    console.log('UserFacade::login(' + uid + ', ' + postKey + ')');
     this.store.dispatch(new userActions.SteemLogin({uid: uid, postKey: postKey}));
     return this.user$;
   }

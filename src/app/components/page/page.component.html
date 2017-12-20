@@ -17,10 +17,13 @@
         <mat-icon>menu</mat-icon>
       </button>
 
-      <span routerLink="" class="branding spacer text-center"><img
+      <span routerLink="questions" class="branding spacer text-center"><img
         [src]="logo"/> Chain QnA</span>
       
-      <app-login-button></app-login-button>
+      <div *ngIf="user$ | async as user">
+        <app-login-button *ngIf="user.uid == null"></app-login-button>
+        <app-logout-button *ngIf="user.uid != null"></app-logout-button>
+      </div>
 
       <a matTooltip="Project Github Repository"
          matTooltipPosition="before"
